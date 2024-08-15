@@ -12,7 +12,7 @@
 Pyth3rNalisis is a powerful and modular Python-based analysis tool aimed at file analysis with a focus on malware detection. It is designed to be easily extensible, allowing users to add custom functionality through additional modules.
 <div align="center">
 
-![image](examples\test.png)
+![image](https://raw.githubusercontent.com/Pyth3rEx/Pyth3rNalisis/main/examples/test.png)
 </div>
 
 ## Features
