@@ -4,6 +4,7 @@
 <div align="center">
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![PyPi Version](https://img.shields.io/pypi/v/Pyth3rNalisis)
 ![License](https://img.shields.io/badge/license-GNU-green)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
 
