@@ -47,18 +47,18 @@ else:
 
 # Handle extension analysis
 if args.extension:
-    print('==================')
-    print('EXTENSION ANALISIS:')
+    print('\033[91m==================\033[0m')
+    print('\033[92mEXTENSION ANALISIS:\033[0m')
     worker_extension.check_file_type(args.file)
 
 # Handle hashing analysis
 if args.hashing:
-    print('==================')
-    print('HASHING ANALISIS:')
+    print('\033[91m==================\033[0m')
+    print('\033[92mHASHING ANALISIS:\033[0m')
     worker_hashingAnalisis.perform_hashing_analisis(args.file)
 
 # Handle metadata analysis
 if args.metadata:
-    print('==================')
-    print('METADATA ANALISIS:')
+    print('\033[91m==================\033[0m')
+    print('\033[92mMETADATA ANALISIS:\033[0m')
     worker_metadata.check_metadata(args.file)
