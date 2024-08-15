@@ -9,12 +9,12 @@ def parse_requirements(filename):
         requirements = [line for line in lines if line and not line.startswith('#')]
     return requirements
 
-# Get the absolute path to the current directory
+# Get the absolute path to the current directory (where setup.py is located)
 current_dir = os.path.abspath(os.path.dirname(__file__))
 
-# Absolute paths to the files
-requirements_path = os.path.join(current_dir, 'requirements.txt')
-readme_path = os.path.join(current_dir, '..', 'README.md')
+# Compute the absolute path to the README.md file (located one directory above the current one)
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+readme_path = os.path.join(parent_dir, 'README.md')
 
 # Read the long description from the README.md file
 with open(readme_path, 'r') as fh:
@@ -30,7 +30,7 @@ setup(
     author_email='',  # Replace with a real email if necessary
     url='https://github.com/Pyth3rEx/Pyth3rNalisis',
     packages=find_packages(),  # Automatically find packages in your project
-    install_requires=parse_requirements(requirements_path),
+    install_requires=parse_requirements(os.path.join(current_dir, 'requirements.txt')),
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
