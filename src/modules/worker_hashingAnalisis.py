@@ -102,11 +102,18 @@ def perform_hashing_analisis(file_path):
     file_hash = calculate_hash(file_path)
     MalwareBazaar_found, VirusTotal_found, HybridAnalisis_found, MalShare_found = check_Against_Public_DB(file_hash)
 
-    table_data = [
-    ["MalwareBazaar", MalwareBazaar_found],
-    ["VirusTotal", VirusTotal_found],
-    ["HybridAnalysis", HybridAnalisis_found],
-    ["MalShare", MalShare_found]
+    def color_boolean(value):
+        if value:
+            return "\033[91mTrue\033[0m"  # Red for True
+        else:
+            return "\033[92mFalse\033[0m"  # Green for False
+
+    data = [
+    ["MalwareBazaar", color_boolean(MalwareBazaar_found)],
+    ["VirusTotal", color_boolean(VirusTotal_found)],
+    ["HybridAnalysis", color_boolean(HybridAnalisis_found)],
+    ["MalShare", color_boolean(MalShare_found)]
     ]
+
     # Printing the table
-    print(tabulate(table_data, headers=["Database", "Found"], tablefmt="grid"))
+    print(tabulate(data, headers=["Database", "Found"], tablefmt="grid"))
