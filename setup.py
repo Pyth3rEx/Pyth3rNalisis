@@ -30,7 +30,7 @@ setup(
     author_email='',  # Replace with a real email if necessary
     url='https://github.com/Pyth3rEx/Pyth3rNalisis',
     packages=find_packages(),  # Automatically find packages in your project
-    install_requires=parse_requirements(os.path.join(current_dir, 'requirements.txt')),
+    install_requires=parse_requirements(os.path.join(current_dir, 'src/requirements.txt')),
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
