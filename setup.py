@@ -4,7 +4,7 @@ setup(
     name='Pyth3rNalisis',
     version='0.0.1',
     description='Pyth3rNalisis is a malware analysis tool that searches for red flags in any file.',
-    long_description='README.md',
+    long_description=open("README.md").read(),
     long_description_content_type='text/markdown',
     author='Pyth3rEx',
     author_email='',
