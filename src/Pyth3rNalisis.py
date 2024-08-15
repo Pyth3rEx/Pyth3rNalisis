@@ -2,14 +2,13 @@
 import sys
 import os
 import argparse
-from tabulate import tabulate
 import modules.module_log as module_log
 import modules.module_banner as module_banner
 import modules.worker_metadata as worker_metadata
 import modules.worker_extension as worker_extension
-
+import modules.worker_staticAnalisis as worker_staticAnalisis
 #constants
-version = '0.0.2'
+version = '0.0.3'
 
 # Custom ArgumentParser class
 class CustomArgumentParser(argparse.ArgumentParser):
@@ -24,6 +23,7 @@ parser = CustomArgumentParser(
 )
 parser.add_argument("-f", "--file", help="File to check")
 parser.add_argument("-e", "--extension", action='store_true', help="Check for extension anomaly")
+parser.add_argument("-s", "--static", action='store_true', help="Perform static analisis on the file")
 parser.add_argument("-m", "--metadata", action='store_true', help="Check for metadata anomaly")
 args = parser.parse_args()
 
@@ -46,33 +46,18 @@ else:
 
 # Handle extension analysis
 if args.extension:
-    declared_file_extension, magic_file_type, detected_file_type = worker_extension.check_file_type(args.file)
-
-    # Prepare data for output (assuming you have the previous table display code)
-    headers = ["Check", "Result"]
-    data = [
-        ["Declared Extension", declared_file_extension or "\033[91mNone\033[0m"],  # Overline in red
-        ["Magic File Type", magic_file_type or "\033[91mNone\033[0m"],             # Overline in red
-        ["Detected File Type", detected_file_type or "\033[91mNone\033[0m"],       # Overline in red
-    ]
-
-    if 'data' == str(magic_file_type):
-        data[1][1] = f"\033[91m{magic_file_type}\033[0m" # Overline in red
-
-    # Printing the table
     print('==================')
     print('EXTENSION ANALISIS:')
-    print(tabulate(data, headers=headers, tablefmt="fancy_grid"))
+    worker_extension.check_file_type(args.file)
+
+# Handle static analysis
+if args.static:
+    print('==================')
+    print('STATIC ANALISIS:')
+    worker_staticAnalisis.perform_static_analisis(args.file)
 
 # Handle metadata analysis
 if args.metadata:
-    metadata_results = worker_metadata.check_metadata(args.file)
-
-    # Printing the table
     print('==================')
     print('METADATA ANALISIS:')
-    if metadata_results:
-        headers = ["Metadata Attribute", "Value"]
-        print(tabulate(metadata_results, headers=headers, tablefmt="fancy_grid"))
-    else:
-        module_log.critical('No data returned')
+    worker_metadata.check_metadata(args.file)

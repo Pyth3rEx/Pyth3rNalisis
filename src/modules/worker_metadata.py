@@ -6,6 +6,7 @@ from docx import Document
 from oletools.olevba import VBA_Parser
 import pefile
 import modules.module_log as module_log
+from tabulate import tabulate
 
 def check_file_metadata(file_path):
     data = []
@@ -116,4 +117,9 @@ def check_metadata(file_path):
     else:
         metadata_results = check_file_metadata(file_path)
 
-    return metadata_results
+    # Printing the table
+    if metadata_results:
+        headers = ["Metadata Attribute", "Value"]
+        print(tabulate(metadata_results, headers=headers, tablefmt="fancy_grid"))
+    else:
+        module_log.critical('No data returned')

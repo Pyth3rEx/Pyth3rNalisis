@@ -50,15 +50,23 @@ Pyth3rNalisis/
     │   ├── corrupted_magic.gif
     │   ├── corrupted_magic.jpg
     │   ├── corrupted_magic.pdf
-    │   ├── corrupted_magic.png
+    │   └── corrupted_magic.png
     └── not_malware/             # Test files that do not contain malware
         ├── legitimate_GIF.gif
         ├── legitimate_JPG.jpg
         ├── legitimate_PDF.pdf
-        ├── legitimate_PNG.png
+        └── legitimate_PNG.png
 ```
 
 ## Installation
+
+### Via PyPI
+
+   ```bash
+   pip install Pyth3rNalisis
+   ```
+
+### Via Git [For Developers]
 
 1. Clone the repository:
    ```bash
@@ -83,7 +91,7 @@ Pyth3rNalisis/
 To run the analysis tool and display it's options, execute the main script:
 
 ```bash
-python src/Pyth3rNalisis.py -h
+Pyth3rNalisis -h
 ```
 
 For more detailed usage, refer to the documentation in the \`docs/\` directory.
