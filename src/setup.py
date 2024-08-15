@@ -9,18 +9,25 @@ def parse_requirements(filename):
         requirements = [line for line in lines if line and not line.startswith('#')]
     return requirements
 
-# Path fixing
-requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
-readme_path = os.path.join(os.path.dirname(__file__), '..', 'README.md')
+# Get the absolute path to the current directory
+current_dir = os.path.abspath(os.path.dirname(__file__))
+
+# Absolute paths to the files
+requirements_path = os.path.join(current_dir, 'requirements.txt')
+readme_path = os.path.join(current_dir, '..', 'README.md')
+
+# Read the long description from the README.md file
+with open(readme_path, 'r') as fh:
+    long_description = fh.read()
 
 setup(
     name='Pyth3rNalisis',
     version='0.0.1',
-    description='Pyth3rNalisis is a malware analisis tool that search for red flags in any file.',
-    long_description=open(readme_path).read(),
+    description='Pyth3rNalisis is a malware analysis tool that searches for red flags in any file.',
+    long_description=long_description,
     long_description_content_type='text/markdown',
     author='Pyth3rEx',
-    author_email='',
+    author_email='',  # Replace with a real email if necessary
     url='https://github.com/Pyth3rEx/Pyth3rNalisis',
     packages=find_packages(),  # Automatically find packages in your project
     install_requires=parse_requirements(requirements_path),
