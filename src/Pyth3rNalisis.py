@@ -7,6 +7,7 @@ import modules.module_banner as module_banner
 import modules.worker_metadata as worker_metadata
 import modules.worker_extension as worker_extension
 import modules.worker_hashingAnalisis as worker_hashingAnalisis
+import modules.worker_entropy as worker_entropy
 
 #constants
 version = '0.0.3'
@@ -24,6 +25,7 @@ parser = CustomArgumentParser(
 )
 parser.add_argument("-f", "--file", help="File to check")
 parser.add_argument("-e", "--extension", action='store_true', help="Check for extension anomaly")
+parser.add_argument("-E", "--entropy", action='store_true', help="Check for unusal entropy in file")
 parser.add_argument("-H", "--hashing", action='store_true', help="Perform hashing analisis on the file")
 parser.add_argument("-m", "--metadata", action='store_true', help="Check for metadata anomaly")
 args = parser.parse_args()
@@ -62,3 +64,9 @@ if args.metadata:
     print('\033[91m==================\033[0m')
     print('\033[92mMETADATA ANALISIS:\033[0m')
     worker_metadata.check_metadata(args.file)
+
+#Handle entropy analysis
+if args.entropy:
+    print('\033[91m==================\033[0m')
+    print('\033[92mENTROPY ANALISIS:\033[0m')
+    worker_entropy.check_entropy(args.file)

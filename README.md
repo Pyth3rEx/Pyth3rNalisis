@@ -83,6 +83,7 @@ Pyth3rNalisis -h
   -h, --help              Show the help message for the app
   -f FILE, --file FILE    File to perform analisis on
   -e, --extension         Check for extension anomaly | Will perform both a magic number analisis and a filetype analisis and present the results against the declared filetype
+  -E, --entropy           Check for unusal entropy in file | High entropy can indicate obfuscation or encryption
   -H, --hashing           Perform hashing analisis on the file | Will check the file's hash against publicly known malware hashes on online databases
   -m, --metadata          Check for metadata anomaly | will return data dependent on the file type provided, will overline anomalies such as incoherent dates, author names and such
 ```
