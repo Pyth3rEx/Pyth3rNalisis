@@ -29,7 +29,6 @@ setup(
         PyPDF2>=3.0.1
         python-docx>=1.1.2
         python-magic>=0.4.27
-        python-magic-bin>=0.4.14
         setuptools>=72.2.0
         tabulate>=0.9.0
         typing_extensions>=4.12.2
