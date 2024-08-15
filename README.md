@@ -80,7 +80,7 @@ Pyth3rNalisis/
 
 ## Usage
 
-To run the analysis tool, execute the main script:
+To run the analysis tool and display it's options, execute the main script:
 
 ```bash
 python src/Pyth3rNalisis.py -h
