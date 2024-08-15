@@ -10,7 +10,7 @@ import modules.worker_hashingAnalisis as worker_hashingAnalisis
 import modules.worker_entropy as worker_entropy
 
 #constants
-version = '0.0.3'
+version = '0.0.4'
 
 # Custom ArgumentParser class
 class CustomArgumentParser(argparse.ArgumentParser):

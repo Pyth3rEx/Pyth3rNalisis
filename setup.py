@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Pyth3rNalisis',
-    version='0.0.3',
+    version='0.0.4',
     description='Pyth3rNalisis is a malware analysis tool that searches for red flags in any file.',
     long_description=open("README.md").read(),
     long_description_content_type='text/markdown',
