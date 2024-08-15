@@ -9,14 +9,15 @@ def parse_requirements(filename):
         requirements = [line for line in lines if line and not line.startswith('#')]
     return requirements
 
-# Specify the path to requirements.txt
+# Path fixing
 requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+readme_path = os.path.join(os.path.dirname(__file__), '..', 'README.md')
 
 setup(
     name='Pyth3rNalisis',
     version='0.0.1',
     description='Pyth3rNalisis is a malware analisis tool that search for red flags in any file.',
-    long_description=open('README.md').read(),
+    long_description=open(readme_path).read(),
     long_description_content_type='text/markdown',
     author='Pyth3rEx',
     author_email='',
