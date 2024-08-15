@@ -83,7 +83,7 @@ Pyth3rNalisis/
 To run the analysis tool, execute the main script:
 
 ```bash
-python src/Pyth3rNalisis.py
+python src/Pyth3rNalisis.py -h
 ```
 
 For more detailed usage, refer to the documentation in the \`docs/\` directory.
