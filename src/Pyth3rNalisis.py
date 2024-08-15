@@ -6,7 +6,8 @@ import modules.module_log as module_log
 import modules.module_banner as module_banner
 import modules.worker_metadata as worker_metadata
 import modules.worker_extension as worker_extension
-import modules.worker_staticAnalisis as worker_staticAnalisis
+import modules.worker_hashingAnalisis as worker_hashingAnalisis
+
 #constants
 version = '0.0.3'
 
@@ -23,7 +24,7 @@ parser = CustomArgumentParser(
 )
 parser.add_argument("-f", "--file", help="File to check")
 parser.add_argument("-e", "--extension", action='store_true', help="Check for extension anomaly")
-parser.add_argument("-s", "--static", action='store_true', help="Perform static analisis on the file")
+parser.add_argument("-H", "--hashing", action='store_true', help="Perform hashing analisis on the file")
 parser.add_argument("-m", "--metadata", action='store_true', help="Check for metadata anomaly")
 args = parser.parse_args()
 
@@ -50,11 +51,11 @@ if args.extension:
     print('EXTENSION ANALISIS:')
     worker_extension.check_file_type(args.file)
 
-# Handle static analysis
-if args.static:
+# Handle hashing analysis
+if args.hashing:
     print('==================')
-    print('STATIC ANALISIS:')
-    worker_staticAnalisis.perform_static_analisis(args.file)
+    print('HASHING ANALISIS:')
+    worker_hashingAnalisis.perform_hashing_analisis(args.file)
 
 # Handle metadata analysis
 if args.metadata:

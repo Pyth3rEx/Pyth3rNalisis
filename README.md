@@ -36,26 +36,11 @@ Pyth3rNalisis/
 │
 ├── src/                         # Source code of the project
 │   ├── Pyth3rNalisis.py         # Main script to run the analysis tool
-│   ├── requirements.txt         # Python dependencies for the project
-│   ├── __init__.py              # Package initializer
 │   └── modules/                 # Directory for additional modules
-│       ├── module_banner.py     # Module for displaying banners
-│       ├── module_log.py        # Module for enhanced logging
-│       ├── worker_extension.py  # Worker module for file extensions
-│       ├── worker_metadata.py   # Worker module for metadata extraction
-│       └── __init__.py          # Package initializer for the modules directory
 │
 └── tests/                       # Test files for validating the tool’s functionality
     ├── malware/                 # Test files containing malware-like signatures
-    │   ├── corrupted_magic.gif
-    │   ├── corrupted_magic.jpg
-    │   ├── corrupted_magic.pdf
-    │   └── corrupted_magic.png
     └── not_malware/             # Test files that do not contain malware
-        ├── legitimate_GIF.gif
-        ├── legitimate_JPG.jpg
-        ├── legitimate_PDF.pdf
-        └── legitimate_PNG.png
 ```
 
 ## Installation
@@ -92,6 +77,14 @@ To run the analysis tool and display it's options, execute the main script:
 
 ```bash
 Pyth3rNalisis -h
+```
+
+```
+  -h, --help              Show the help message for the app
+  -f FILE, --file FILE    File to perform analisis on
+  -e, --extension         Check for extension anomaly | Will perform both a magic number analisis and a filetype analisis and present the results against the declared filetype
+  -H, --hashing           Perform hashing analisis on the file | Will check the file's hash against publicly known malware hashes on online databases
+  -m, --metadata          Check for metadata anomaly | will return data dependent on the file type provided, will overline anomalies such as incoherent dates, author names and such
 ```
 
 For more detailed usage, refer to the documentation in the \`docs/\` directory.
