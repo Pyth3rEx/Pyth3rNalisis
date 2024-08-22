@@ -11,12 +11,15 @@ setup(
     url='https://github.com/Pyth3rEx/Pyth3rNalisis',
     packages=find_packages(),
     install_requires=["""
+        certifi>=2024.7.4
         cffi>=1.17.0
+        charset-normalizer>=3.3.2
         colorama>=0.4.6
         colorclass>=2.2.2
         cryptography>=43.0.0
         easygui>=0.98.3
         filetype>=1.2.0
+        idna>=3.7
         lxml>=5.3.0
         msoffcrypto-tool>=5.4.2
         olefile>=0.47
@@ -29,9 +32,11 @@ setup(
         PyPDF2>=3.0.1
         python-docx>=1.1.2
         python-magic>=0.4.27
-        setuptools>=72.2.0
+        requests>=2.32.3
+        setuptools>=73.0.1
         tabulate>=0.9.0
         typing_extensions>=4.12.2
+        urllib3>=2.2.2
         win_unicode_console>=0.5
     """],
     classifiers=[
@@ -44,5 +49,5 @@ setup(
         'Intended Audience :: Information Technology',
         'Development Status :: 3 - Alpha'
     ],
-    python_requires='>=3.12',
+    python_requires='>=3.11',
 )
