@@ -53,7 +53,7 @@ setup(
     python_requires='>=3.11',
     entry_points={
         'console_scripts': [
-            'Pyth3rnalisis=Pyth3rNalisis:main',
+            'Pyth3rNalisis=Pyth3rNalisis:main',
         ],
     },
 )
