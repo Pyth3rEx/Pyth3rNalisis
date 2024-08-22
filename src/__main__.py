@@ -13,7 +13,7 @@ def main():
     import modules.worker_entropy as worker_entropy
 
     #constants
-    version = '0.0.4'
+    version = '0.0.4c'
 
     # Custom ArgumentParser class
     class CustomArgumentParser(argparse.ArgumentParser):
