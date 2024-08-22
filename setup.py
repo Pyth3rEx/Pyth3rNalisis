@@ -2,15 +2,18 @@ from setuptools import setup, find_packages
 
 setup(
     name='Pyth3rNalisis',
-    version='0.0.4c',
+    version='0.0.5',
     description='Pyth3rNalisis is a malware analysis tool that searches for red flags in any file.',
     long_description=open("README.md").read(),
     long_description_content_type='text/markdown',
     author='Pyth3rEx',
-    author_email='',
     url='https://github.com/Pyth3rEx/Pyth3rNalisis',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
+    include_package_data=True,  # Ensure that all data files are included
+    package_data={
+        'Pyth3rNalisis': ['*.py', 'modules/*.py'],  # Include all Python files and modules
+    },
     install_requires=[
         "certifi>=2024.7.4",
         "cffi>=1.17.0",
@@ -53,7 +56,7 @@ setup(
     python_requires='>=3.11',
     entry_points={
         'console_scripts': [
-            'Pyth3rNalisis=Pyth3rNalisis:main',
+            'Pyth3rNalisis = Pyth3rNalisis.__main__:main',
         ],
     },
 )

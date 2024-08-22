@@ -2,7 +2,7 @@
 import magic
 import filetype
 import os
-import modules.module_log as module_log
+import Pyth3rNalisis.modules.module_log as module_log
 from tabulate import tabulate
 
 def get_file_type_via_magic(file_path):

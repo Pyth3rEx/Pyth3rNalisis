@@ -5,15 +5,15 @@ def main():
     import sys
     import os
     import argparse
-    import modules.module_log as module_log
-    import modules.module_banner as module_banner
-    import modules.worker_metadata as worker_metadata
-    import modules.worker_extension as worker_extension
-    import modules.worker_hashingAnalisis as worker_hashingAnalisis
-    import modules.worker_entropy as worker_entropy
+    import Pyth3rNalisis.modules.module_log as module_log
+    import Pyth3rNalisis.modules.module_banner as module_banner
+    import Pyth3rNalisis.modules.worker_metadata as worker_metadata
+    import Pyth3rNalisis.modules.worker_extension as worker_extension
+    import Pyth3rNalisis.modules.worker_hashingAnalisis as worker_hashingAnalisis
+    import Pyth3rNalisis.modules.worker_entropy as worker_entropy
 
     #constants
-    version = '0.0.4c'
+    version = '0.0.5'
 
     # Custom ArgumentParser class
     class CustomArgumentParser(argparse.ArgumentParser):

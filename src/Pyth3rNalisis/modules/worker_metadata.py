@@ -5,7 +5,7 @@ import PyPDF2
 from docx import Document
 from oletools.olevba import VBA_Parser
 import pefile
-import modules.module_log as module_log
+import Pyth3rNalisis.modules.module_log as module_log
 from tabulate import tabulate
 
 def check_file_metadata(file_path):
