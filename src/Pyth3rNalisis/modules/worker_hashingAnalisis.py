@@ -3,7 +3,11 @@ import os
 import sys
 import requests
 from tabulate import tabulate
-import Pyth3rNalisis.modules.module_log as module_log
+
+try:
+    import Pyth3rNalisis.modules.module_log as module_log
+except:
+    import modules.module_log as module_log
 
 def calculate_hash(file_path, hash_type='sha256'):
     hash_func = getattr(hashlib, hash_type)()
