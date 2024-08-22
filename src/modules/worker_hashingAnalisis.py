@@ -116,4 +116,4 @@ def perform_hashing_analisis(file_path):
     ]
 
     # Printing the table
-    print(tabulate(data, headers=["Database", "Found"], tablefmt="grid"))
+    print(tabulate(data, headers=["Database", "Found"], tablefmt="fancy_grid"))
