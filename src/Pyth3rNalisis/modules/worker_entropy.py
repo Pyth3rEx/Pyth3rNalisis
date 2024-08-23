@@ -21,9 +21,9 @@ def check_entropy(file_path):
     entropy_percentage = (entropy / max_entropy) * 100 if max_entropy > 0 else 0
 
     # Color coding based on entropy percentage
-    if entropy_percentage > 85:
+    if 85 < entropy_percentage:
         color = '\033[91m'  # Red for high entropy (suspicious)
-    elif entropy_percentage > 70:
+    elif 70 < entropy_percentage:
         color = '\033[93m'  # Yellow for moderate entropy (potentially suspicious)
     else:
         color = '\033[92m'  # Green for low entropy (less suspicious)

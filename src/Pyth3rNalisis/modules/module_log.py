@@ -38,15 +38,15 @@ console_handler.setLevel(logging.DEBUG)  # Set the logging level for the console
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         # Define color codes based on the log level
-        if record.levelno == logging.DEBUG:
+        if logging.DEBUG == record.levelno:
             levelname_color = f"{Fore.BLUE}{record.levelname}{Style.RESET_ALL}"
-        elif record.levelno == logging.INFO:
+        elif logging.INFO == record.levelno:
             levelname_color = f"{Fore.GREEN}{record.levelname}{Style.RESET_ALL}"
-        elif record.levelno == logging.WARNING:
+        elif logging.WARNING == record.levelno:
             levelname_color = f"{Fore.YELLOW}{record.levelname}{Style.RESET_ALL}"
-        elif record.levelno == logging.ERROR:
+        elif logging.ERROR == record.levelno:
             levelname_color = f"{Fore.RED}{record.levelname}{Style.RESET_ALL}"
-        elif record.levelno == logging.CRITICAL:
+        elif logging.CRITICAL == record.levelno:
             levelname_color = f"{Back.RED}{Fore.WHITE}{record.levelname}{Style.RESET_ALL}"
         else:
             levelname_color = record.levelname

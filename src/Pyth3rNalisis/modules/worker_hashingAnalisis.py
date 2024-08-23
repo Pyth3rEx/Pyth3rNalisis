@@ -27,7 +27,7 @@ def MalwareBazaar(file_hash):
     response = requests.post(url, data=data)
     result = response.json()
 
-    if result['query_status'] == 'ok':
+    if 'ok' == result['query_status']:
         return True
     else:
         return False
@@ -42,8 +42,8 @@ def VirusTotal(file_hash):
     response = requests.get(url)
     result = response.json()
 
-    if result['response_code'] == 1:
-        if result['positives'] > 0:
+    if 1 == result['response_code'] 1:
+        if 0 < result['positives']:
             return True
         else:
             return False
@@ -65,7 +65,7 @@ def HybridAnalisis(file_hash):
     response = requests.get(url, headers=headers)
     result = response.json()
 
-    if response.status_code == 200 and result:
+    if 200 == response.status_code and result:
         return True
     else:
         return False

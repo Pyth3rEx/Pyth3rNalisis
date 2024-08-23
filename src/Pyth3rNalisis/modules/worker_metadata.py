@@ -24,9 +24,9 @@ def check_file_metadata(file_path):
         data.append(("Creation Time", creation_time))
         data.append(("Modification Time", modification_time))
 
-        if file_size == 0:
+        if 0 == file_size:
             data.append(("Warning", "The file is empty."))
-        if time.time() - file_stats.st_ctime < 60 * 60 * 24:
+        if 60 * 60 * 24 > time.time() - file_stats.st_ctime:
             data.append(("Info", "The file was created recently."))
 
     except Exception as e:
@@ -44,7 +44,7 @@ def check_pdf_metadata(file_path):
             if metadata:
                 for key, value in metadata.items():
                     data.append((key, value))
-                    if key == "/Author" and "unknown" in value.lower():
+                    if "/Author" == key and "unknown" in value.lower():
                         data.append(("Warning", f"Suspicious author name found: {value}"))
             else:
                 data.append(("Info", "No metadata found in this PDF file."))
@@ -66,7 +66,7 @@ def check_docx_metadata(file_path):
         data.append(("Created", str(core_properties.created)))
         data.append(("Modified", str(core_properties.modified)))
 
-        if core_properties.author.lower() == "unknown":
+        if "unknown" == core_properties.author.lower():
             data.append(("Warning", f"Suspicious author name found: {core_properties.author}"))
 
     except Exception as e:
@@ -83,7 +83,7 @@ def check_ole_metadata(file_path):
         for key, value in metadata.__dict__.items():
             if value:
                 data.append((key, value))
-                if key == "last_saved_by" and "unknown" in value.lower():
+                if "last_saved_by" == key and "unknown" in value.lower():
                     data.append(("Warning", f"Suspicious 'Last Saved By' found: {value}"))
 
     except Exception as e:
@@ -100,7 +100,7 @@ def check_exe_metadata(file_path):
         data.append(("Number of Sections", pe.FILE_HEADER.NumberOfSections))
         data.append(("Machine", pe.FILE_HEADER.Machine))
 
-        if pe.FILE_HEADER.TimeDateStamp < 0x50000000:
+        if 0x50000000 > pe.FILE_HEADER.TimeDateStamp:
             data.append(("Warning", f"Suspiciously old timestamp: {pe.FILE_HEADER.TimeDateStamp}"))
 
     except Exception as e:
@@ -110,13 +110,13 @@ def check_exe_metadata(file_path):
 
 def check_metadata(file_path):
     _, declared_file_extension = os.path.splitext(file_path)
-    if str(declared_file_extension).lower() == '.exe':
+    if '.exe' == str(declared_file_extension).lower():
         metadata_results = check_exe_metadata(file_path)
-    elif str(declared_file_extension).lower() == '.vba':
+    elif '.vba' == str(declared_file_extension).lower():
         metadata_results = check_ole_metadata(file_path)
-    elif str(declared_file_extension).lower() == '.docx':
+    elif '.docx' == str(declared_file_extension).lower():
         metadata_results = check_docx_metadata(file_path)
-    elif str(declared_file_extension).lower() == '.pdf':
+    elif '.pdf' == str(declared_file_extension).lower():
         metadata_results = check_pdf_metadata(file_path)
     else:
         metadata_results = check_file_metadata(file_path)

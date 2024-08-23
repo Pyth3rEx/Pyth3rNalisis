@@ -91,5 +91,5 @@ def main():
         print('\033[92mCOMMAND & CONTROL DETECTION:\033[0m')
         worker_CommandAndControl.check_CommandAndControl(args.file)
 
-if __name__ == "__main__":
+if "__main__" == __name__:
     main()
