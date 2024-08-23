@@ -42,7 +42,7 @@ def VirusTotal(file_hash):
     response = requests.get(url)
     result = response.json()
 
-    if 1 == result['response_code'] 1:
+    if 1 == result['response_code']:
         if 0 < result['positives']:
             return True
         else:
