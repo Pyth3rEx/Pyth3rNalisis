@@ -81,12 +81,20 @@ Pyth3rNalisis -h
 ```
 
 ```
-  -h, --help              Show the help message for the app
-  -f FILE, --file FILE    File to perform analisis on
-  -e, --extension         Check for extension anomaly            | Will perform both a magic number analisis and a filetype analisis and present the results against the declared filetype
-  -E, --entropy           Check for unusal entropy in file       | High entropy can indicate obfuscation or encryption of data in the file
-  -H, --hashing           Perform hashing analisis on the file   | Will check the file's hash against publicly known malware hashes on online databases
-  -m, --metadata          Check for metadata anomaly             | will return data dependent on the file type provided, will overline anomalies such as incoherent dates, author names and such
+   -h, --help               Show the help message for the app
+   -f FILE, --file FILE     File to perform analisis on
+   -H, --hashing            Perform hashing analisis on the file                              | Will check the file's hash against publicly known malware hashes on online databases
+   -e, --extension          Check for extension anomaly                                       | Will perform both a magic number analisis and a filetype analisis and present the results against the declared filetype
+   -E, --entropy            Check for unusal entropy in file                                  | High entropy can indicate obfuscation or encryption of data in the file
+   -C, --CommandAndControl  Check for command and control elements embedded in the file       | High entropy can indicate obfuscation or encryption of data in the file
+   -m, --metadata           Check for metadata anomaly                                        | Will return data dependent on the file type provided, will overline anomalies such as incoherent dates, author names and such
+```
+
+## Example
+
+```
+Pyth3rNalisis -f exampleFile.abc -eE                                                          | Check extensions and entropy of file exampleFile.abc
+Pyth3rNalisis -f exampleFile.bin -C                                                           | Check for emails and IPs in binary file exampleFile.bin
 ```
 
 For more detailed usage, refer to the documentation in the \`docs/\` directory.

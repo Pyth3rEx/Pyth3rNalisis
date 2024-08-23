@@ -23,7 +23,7 @@ def main():
         import modules.worker_CommandAndControl as worker_CommandAndControl
 
     #constants
-    version = '0.0.6'
+    version = '0.0.7'
 
     # Custom ArgumentParser class
     class CustomArgumentParser(argparse.ArgumentParser):
