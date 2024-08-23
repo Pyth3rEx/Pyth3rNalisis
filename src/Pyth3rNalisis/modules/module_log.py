@@ -1,3 +1,15 @@
+''' Usage:
+try:
+    import Pyth3rNalisis.modules.module_log as module_log
+except:
+    import modules.module_log as module_log
+module_log.debug('text')
+module_log.info('text')
+module_log.warning('text')
+module_log.error('text')
+module_log.critical('text')
+'''
+
 import logging
 import os
 from colorama import init, Fore, Style, Back
@@ -70,11 +82,3 @@ def error(stringToPrint):
 
 def critical(stringToPrint):
     logger.critical(str(stringToPrint))
-
-# # Usage:
-# import modules.module_log as module_log
-# module_log.debug('text')
-# module_log.info('text')
-# module_log.warning('text')
-# module_log.error('text')
-# module_log.critical('text')

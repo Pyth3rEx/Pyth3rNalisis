@@ -71,7 +71,7 @@ def check_CommandAndControl(file_path):
         ['IPv4', ', '.join(ipv4_addresses)],
         ['IPv6', ', '.join(ipv6_addresses)],
         ['Email', ', '.join(emails)],
-        ['Domain', ', '.join(domains)]
+        ['Domain & Files', ', '.join(domains)]
     ]
 
     headers = ['Type', 'Matches']

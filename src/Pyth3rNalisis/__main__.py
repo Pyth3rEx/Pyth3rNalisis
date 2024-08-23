@@ -34,7 +34,7 @@ def main():
     # Argument parsing with custom parser
     parser = CustomArgumentParser(
         prog='Pyth3rNalisis',
-        description='Pyth3rNalisis is a malware analysis tool that searches for red flags in any file. [NOT A REPLACEMENT FOR AV!!!!]'
+        description='Pyth3rNalisis is a malware analysis tool that searches for red flags in any file.'
     )
     parser.add_argument("-f", "--file", help="File to check")
     parser.add_argument("-H", "--hashing", action='store_true', help="Perform hashing analisis on the file")
